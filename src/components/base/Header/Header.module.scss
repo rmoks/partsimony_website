@@ -1,0 +1,100 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  @include media.onSm() {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  @include media.onLg() {
+    flex-direction: row;
+    align-items: stretch;
+
+    & > * {
+      flex-basis: 50%;
+    }
+  }
+
+  &.centered {
+    text-align: center;
+    @include media.onLg() {
+      & > * {
+        flex-basis: 100%;
+      }
+    }
+
+    .header {
+      @include media.onLg() {
+        padding-top: 40px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include media.onLg() {
+    padding-top: 60px;
+    padding-bottom: 160px;
+  }
+}
+
+.title {
+  font-size: 32px;
+  color: colors.$white-1000;
+  margin-bottom: 20px;
+
+  @include media.onSm() {
+    @include mixins.H2;
+  }
+
+  @include media.onLg() {
+    @include mixins.H1;
+  }
+}
+
+.subtitle {
+  font-size: 16px;
+  color: colors.$white-1000;
+  margin-bottom: 20px;
+  line-height: 150%;
+
+  @include media.onLg() {
+    @include mixins.Body1;
+    margin-bottom: 40px;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  height: 320px;
+  position: relative;
+
+  @include media.onSm() {
+    height: initial;
+  }
+
+  @include media.onLg() {
+    width: 600px;
+    height: 667px;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
+
+.spacer {
+  padding-bottom: 67px;
+}

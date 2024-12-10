@@ -1,0 +1,62 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/fonts';
+@use 'styles/mixins';
+@use 'styles/variables';
+
+.container {
+  @include mixins.Button;
+  height: 43px;
+  padding: 0 24px;
+  background-color: colors.$blue-400;
+  border-radius: variables.$border-radius;
+  border: none;
+  color: colors.$white-1000;
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: colors.$blue-200;
+  }
+
+  &:active {
+    background-color: colors.$blue-100;
+  }
+
+  &-light {
+    border-color: colors.$white-1000;
+    background-color: transparent;
+    color: colors.$white-1000;
+
+    &:hover {
+      background-color: colors.$white-1000;
+      color: colors.$blue-400;
+    }
+
+    &:active {
+      background-color: #c8cbce;
+      border-color: #c8cbce;
+      color: colors.$blue-400;
+    }
+  }
+
+  &-disabled {
+    pointer-events: none;
+  }
+
+  @include media.onDesktop() {
+    height: 48px;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.loader {
+  position: absolute;
+}

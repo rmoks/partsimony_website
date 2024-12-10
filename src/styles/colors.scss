@@ -1,0 +1,55 @@
+$black: #333333;
+$blue-darker: #506ad4;
+$blue: #a3cdd9;
+$gray-darker: #e2e2e2;
+$gray-light: #c4c4c4;
+$gray-lighter: #f2f2f2;
+$gray: #808080;
+$white: #ffffff;
+$red: #bb2020;
+
+$primary: $blue;
+$background-main: $white;
+$background-dark: $black;
+$background-blue: $blue;
+$text: $black;
+$text-gray: $gray;
+$text-inverted: $white;
+$text-validation: $blue;
+$border: $gray-light;
+$border-dark: $gray;
+$border-gray: #d0d0d0;
+$error: $red;
+$shadowInput: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+
+$link: $blue-darker;
+$link-inverted: $white;
+$link-active: $blue;
+
+$blue-100: #134598; // Background
+$blue-200: #1557aa; // Background
+$blue-400: #1372d2; // Buttons
+$blue-600: #7db1e6; // -
+$blue-gredient: linear-gradient(
+  286deg,
+  $blue-100 1.36%,
+  $blue-400 66.99%
+); // Hero Header Background
+
+$grey-900: #111827; // Text, Headings, Paragrapghs
+$grey-800: #1f2937; // -
+$grey-700: #374151; // Arrows Color , Mobile menu text color, Tetimonials text color
+$grey-600: #4b5563; // Tooltip color
+$grey-500: #6b7280; // Inactive Tabs text color, Icons color in “Supported Processes” section
+$grey-400: #9ca3af; // -
+$grey-300: #d1d5db; // Tabs Border, Sepearots
+$grey-200: #e5e7eb; // Background
+$grey-100: #f3f4f6; // Background
+$grey-50: #f9fafb; // -
+
+$green-600: #20cb00; // Success
+$red-500: #df3309; // Error
+
+$white-1000: #ffffff;
+
+$background: $white-1000;

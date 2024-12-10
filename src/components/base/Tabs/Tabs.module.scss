@@ -1,0 +1,70 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tabsContainer {
+  border-bottom: 1px solid colors.$grey-300;
+  margin-bottom: 20px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: auto hidden;
+}
+
+.tabButton {
+  text-transform: uppercase;
+  padding: 16px 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: colors.$grey-500;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+
+  @include mixins.transition(color, font-weight);
+
+  &:hover {
+    color: colors.$blue-400;
+  }
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  @include media.onLg() {
+    font-size: 14px;
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+}
+
+.tabButtonActive {
+  color: colors.$grey-900;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -1px;
+    background-color: colors.$blue-400;
+  }
+}
+
+.content {
+  font-size: 16px;
+  line-height: 24px;
+  min-height: 100px;
+  @include media.onLg() {
+    min-height: 90px;
+  }
+}

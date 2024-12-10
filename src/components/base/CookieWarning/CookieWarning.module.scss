@@ -1,0 +1,33 @@
+@use 'styles/colors';
+
+.wrapper {
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: colors.$background-main;
+  padding: 1rem 2rem;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999;
+
+  .text {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.close {
+  text-decoration: none;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  padding: 0.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: colors.$link;
+
+  &:hover {
+    color: colors.$link-active;
+  }
+}

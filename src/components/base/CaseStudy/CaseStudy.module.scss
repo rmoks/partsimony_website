@@ -1,0 +1,336 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.caseStudyWrapper {
+  padding-top: 60px;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include media.onLg() {
+    padding-top: 160px;
+  }
+  @include media.maxLg() {
+    .quote {
+      order: 2 !important;
+    }
+    .data {
+      order: 1 !important;
+    }
+  }
+
+  .quoteBg{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: colors.$white-1000;
+    width: 100vw;
+    right: 0;
+  
+    @include media.onLg() {
+      width: 100vw;
+    }
+  }
+
+  &.inverted {
+    .highlight {
+      left: 0;
+      right: unset;
+    }
+    .quote {
+      order: 2;
+    }
+    .data {
+      order: 1;
+    }
+
+    .quoteBg{
+      left: 0;
+   }
+  }
+  .title {
+    font-size: 32px;
+    line-height: 36px;
+
+    @include media.onLg() {
+      font-size: 54px;
+      line-height: 64px;
+      transform: translateY(-100%);
+    }
+  }
+
+  .content {
+    width: 100%;
+  }
+  .header {
+    position: relative;
+    height: 500px;
+    flex-direction: column-reverse;
+    margin-right: 25px;
+
+    @include media.onLg() {
+      height: 800px;
+      height: 600px;
+      display: block;
+      margin: 0;
+    }
+    .title {
+      display: none;
+      position: relative;
+      z-index: 1;
+      left: 85px;
+      top: 31px;
+      width: 60%;
+      @include media.onLg() {
+        display: block;
+      }
+    }
+  }
+  .imageWrapper {
+    background: linear-gradient(
+      180deg,
+      colors.$white-1000 376px,
+      colors.$grey-100 300px
+    );
+
+    @include media.onLg() {
+      background: linear-gradient(
+        180deg,
+        colors.$white-1000 300px,
+        colors.$grey-100 300px
+      );
+    }
+    justify-content: center;
+
+    .imageInner {
+      max-width: 1200px;
+      position: relative;
+      flex: 1;
+
+      @include media.onLg() {
+        flex-direction: column;
+        flex-basis: 83.33333333%;
+        max-width: 83.33333333%;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      @include media.onXxl() {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0;
+      }
+      
+    > div {
+      position: relative;
+      padding: 0;
+    }
+    & > .title {
+      display: block;
+      padding: 0 20px 40px;
+      @include media.onLg() {
+        display: none;
+      }
+    }
+    
+    .highlight {
+      width: 100%;
+      background-color: colors.$grey-900;
+      z-index: 2;
+      right: 0;
+      bottom: -300px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      bottom: 0;
+      position: absolute;
+      min-height: 200px;
+      height: fit-content;
+
+      @include media.onSm() {
+        bottom: 0;
+        width: 200px;
+        left: 0;
+      }
+
+      @include media.onLg() {
+        bottom: 0;
+        width: 340px;
+        padding: 36px;
+        height: 300px;
+      }
+      .logoContainer {
+        height: 25px;
+        width: 70%;
+        position: relative;
+
+        @include media.onLg() {
+          height: 45px;
+        }
+      }
+      .highlightText {
+        font-weight: 700;
+        p {
+          font-size: 40px;
+          line-height: 28px;
+          margin-top: 30px;
+          @include media.onLg() {
+            font-size: 40px;
+          }
+        }
+        small {
+          font-size: 16px;
+          line-height: 28px;
+
+          &.tileDescription {
+            display: block;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 14px;
+            color: colors.$grey-500;
+            height: 1em;
+            @include media.onLg() {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  .featuredImage {
+    height: 300px;
+    position: relative;
+
+    @include media.onSm() {
+      position: initial;
+    }
+    
+    @include media.onLg() {
+      position: initial;
+      height: 100%;
+    }
+  }
+  .body {
+    background-color: colors.$grey-100;
+    position: relative;
+    
+    .bodyInner {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 27px;
+      gap: 40px;
+      padding: 40px 0;
+      height: 100%;;
+      flex-direction: column;
+
+      @include media.onLg() {
+        flex-basis: 83.33333333%;
+        max-width: 83.33333333%;
+        margin: 0 auto;
+        padding: 40px;
+      }
+
+      @include media.onLg() {
+        margin-top: 300px;
+        flex-direction: row;
+        max-width: 1200px;
+      }
+
+      b {
+        font-weight: bold;
+        color: colors.$blue-400;
+      }
+      @include media.onLg() {
+        margin-top: unset;
+        font-size: 21px;
+        line-height: 33px;
+        padding: 60px 0;
+      }
+      @include media.onLg() {
+        gap: unset;
+        padding: 100px 0 120px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 12px;
+        @include media.onLg() {
+          font-size: 32px;
+          line-height: 38px;
+          margin-bottom: 16px;
+        }
+      }
+      > div {
+        position: relative;
+        padding: 0;
+      }
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+      }
+      .quote,
+      .data {
+        align-self: flex-start;
+      }
+
+      .quote {
+        background-color: colors.$white-1000;
+        position: relative;
+        padding: 40px 24px;
+        margin-right: 25px;;
+        max-width: 100%;
+
+        @include media.onLg() {
+          padding: 60px;
+        }
+
+        > div {
+          padding: 0;
+          > div {
+            padding: 0 0 0 0px;
+          }
+          @include media.onLg() {
+            padding-left: 60px;
+          }
+        }
+        @include media.onLg() {
+          padding-left: 0;
+        }
+      }
+      .data {
+        padding: 0px;
+        flex:1;
+        max-width: 100%;
+        
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          max-width: 100%;
+          height: 100%;
+          @include media.onLg() {
+            gap: 60px;
+          }
+        }
+        @include media.onLg() {
+          padding: 0 40px;
+        }
+        @include media.onLg() {
+          padding: 0 60px;
+        }
+      }
+    }
+  }
+}

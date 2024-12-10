@@ -1,0 +1,58 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.controlButton {
+  width: 80px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$grey-300;
+  border: none;
+  cursor: pointer;
+
+  @include mixins.transition(background-color);
+
+  &:hover {
+    background-color: colors.$grey-400;
+    & > svg > path {
+      fill: #fff;
+    }
+  }
+
+  &:active {
+    background-color: colors.$grey-500;
+    & > svg > path {
+      fill: #fff;
+    }
+  }
+
+  &-light {
+    background-color: colors.$grey-200;
+  }
+
+  @include media.onLg() {
+    width: 300px;
+    height: 60px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &-reverse {
+    align-items: flex-start;
+  }
+}
+
+.controls {
+  display: flex;
+}

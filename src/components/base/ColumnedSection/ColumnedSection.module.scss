@@ -1,0 +1,160 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.root {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+
+  & > * {
+    // max-width: 100%;
+    width: 100%;
+  }
+
+  &.smallGap {
+    padding-top: 60px;
+  }
+
+  @include media.onLg() {
+    overflow: visible;
+    padding-top: 120px;
+    flex-direction: column;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  @include media.onLg() {
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 50px;
+    padding-bottom: 80px;
+
+    & > * {
+      flex-basis: 50%;
+    }
+
+    &--reversed {
+      flex-direction: row-reverse;
+
+      .contentContainer {
+        padding-right: 0;
+        padding-left: 56px;
+      }
+    }
+  }
+
+  @include media.maxLg() {
+    padding: 0;
+  }
+}
+
+.contentContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include media.onLg() {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    padding-right: 56px;
+  }
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  width: 100vw;
+
+  &--halfRight {
+    left: 50%;
+    top: 201px;
+  }
+  &--halfLeft {
+    right: 50%;
+    top: 201px;
+  }
+  &--left {
+    right: 0;
+    top: 304px;
+  }
+
+  &--darkBlue {
+    background-color: colors.$blue-100;
+  }
+  &--blue {
+    background-color: colors.$blue-400;
+  }
+  &--lightGrey {
+    background-color: colors.$grey-200;
+  }
+
+  @include media.maxLg() {
+    left: 0;
+    top: -20px;
+    bottom: -40px;
+    right: 0;
+
+    &--lightGrey {
+      height: 100vh;
+    }
+  }
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+
+  @include media.onLg() {
+    font-size: 54px;
+    margin-bottom: 30px;
+  }
+}
+
+.content {
+  font-size: 16px;
+  line-height: 24px;
+
+  @include media.onLg() {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.imageContainer {
+  position: relative;
+
+  height: 160px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0;
+
+  @include media.onLg() {
+    height: auto;
+  }
+
+  @include media.maxLg() {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.previewContainer {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  box-sizing: border-box;
+}

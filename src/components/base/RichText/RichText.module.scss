@@ -1,0 +1,27 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/fonts';
+
+.description p {
+  margin: 0 0 2rem 0;
+}
+
+.defaultStyles {
+  & > p > b {
+    color: colors.$blue-400;
+    font-weight: 700;
+  }
+  & > p > i {
+    font-style: italic;
+  }
+}
+.description p:last-child {
+  margin-bottom: 0;
+}
+.wrapper {
+  blockquote {
+    border-left: 0.25rem solid colors.$gray-light;
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}

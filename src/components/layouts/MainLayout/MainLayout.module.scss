@@ -1,0 +1,14 @@
+@use 'styles/media';
+@use 'styles/mixins';
+
+.content {
+  padding-top: 90px;
+  // padding-bottom: 40px;
+  background: linear-gradient(91.09deg, #134598 0.51%, #1372d2 84.92%);
+
+  @include mixins.transition(padding-top);
+
+  @include media.onDesktop {
+    padding-top: 160px;
+  }
+}

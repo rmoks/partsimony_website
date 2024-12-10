@@ -1,0 +1,66 @@
+{
+  "name": "partsimony-site",
+  "version": "1.0.4",
+  "main": "index.js",
+  "author": "HOO KOO E KOO",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev",
+    "build": "next build",
+    "start": "next start",
+    "postbuild": "next-sitemap",
+    "analyze": "ANALYZE=true next build",
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "15.0.0",
+    "@contentful/rich-text-types": "15.0.0",
+    "@mailchimp/mailchimp_marketing": "3.0.74",
+    "@next/bundle-analyzer": "11.0.0",
+    "@splidejs/react-splide": "0.6.17",
+    "@svgr/webpack": "5.5.0",
+    "axios": "0.24.0",
+    "classnames": "2.3.1",
+    "contentful": "8.4.2",
+    "date-fns": "2.22.1",
+    "dotenv-flow": "3.2.0",
+    "flexboxgrid2": "7.2.1",
+    "formik": "2.2.9",
+    "fuse.js": "6.4.6",
+    "glob": "7.1.7",
+    "lodash": "4.17.21",
+    "mailgun-js": "^0.22.0",
+    "next": "^14.0.0",
+    "next-compose-plugins": "2.2.1",
+    "next-sitemap": "2.5.15",
+    "normalize.css": "8.0.1",
+    "prop-types": "15.7.2",
+    "raf": "3.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-ga4": "1.4.1",
+    "react-markdown": "7.1.0",
+    "sass": "1.35.1",
+    "sitemap": "7.0.0",
+    "swiper": "6.7.1",
+    "yup": "0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "7.28.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-next": "11.0.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "6.0.0",
+    "lint-staged": "11.0.0",
+    "prettier": "2.3.1"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "next lint --fix"
+    ],
+    "*.js": "eslint --cache --fix"
+  }
+}

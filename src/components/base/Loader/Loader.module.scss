@@ -1,0 +1,22 @@
+@use 'styles/colors';
+
+$size: 20px;
+$borderWidth: 4px;
+
+.loader {
+  border: $borderWidth solid transparent;
+  border-top: $borderWidth solid colors.$white-1000;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

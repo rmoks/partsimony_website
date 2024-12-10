@@ -1,0 +1,73 @@
+@mixin onSm {
+  @media only screen and (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin maxSm {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onMd {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin onLg {
+  @media only screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin maxLg {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onXl {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin maxXl {
+  @media only screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin onLgWithMargin {
+  @media only screen and (min-width: 1120px) {
+    @content;
+  }
+}
+
+@mixin onXlWithMargin {
+  @media only screen and (min-width: 1320px) {
+    @content;
+  }
+}
+
+@mixin onXxl {
+  @media only screen and (min-width: 1550px) {
+    @content;
+  }
+}
+
+// custom naming for media queries
+
+@mixin onMobile {
+  @include maxLg {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @include onLg {
+    @content;
+  }
+}

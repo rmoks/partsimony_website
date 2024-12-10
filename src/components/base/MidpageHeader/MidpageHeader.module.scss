@@ -1,0 +1,16 @@
+@use '~styles/media';
+
+.wrapper {
+  padding: 90px 0 0 0;
+  
+  .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    @include media.onLg() {
+      font-size: 54px;
+      line-height: 64px;
+    }
+  }
+}

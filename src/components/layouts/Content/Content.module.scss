@@ -1,0 +1,24 @@
+@use 'styles/media';
+@use "sass:math";
+
+$size: 1200px;
+
+.content {
+  box-sizing: content-box;
+  max-width: $size;
+  padding: 0 24px;
+  margin: 0 auto;
+
+  @include media.onLg() {
+    padding: 0 40px;
+  }
+
+  &-half {
+    max-width: math.div($size, 2);
+  }
+
+  &-full {
+    max-width: 100%;
+    padding: 0;
+  }
+}

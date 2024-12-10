@@ -1,0 +1,85 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+$background-height: 120px;
+$background-height-mobile: 60px;
+
+.container {
+  background-color: colors.$white-1000;
+  position: relative;
+  padding-top: 60px;
+
+  @include media.onLg() {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    & > * {
+      max-width: 50% !important;
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 32px;
+
+  @include media.onLg() {
+    font-size: 54px;
+  }
+}
+
+.contentWrapper {
+  & > * {
+    margin: 0;
+  }
+
+  @include media.onLg() {
+    box-sizing: border-box;
+    padding-left: 84px !important;
+    margin-top: -$background-height;
+  }
+}
+
+.content {
+  margin-bottom: 40px;
+  max-width: 470px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 250px;
+  position: relative;
+
+  @include media.onLg() {
+    height: 454px;
+  }
+}
+
+.background {
+  background-color: colors.$blue-400;
+  width: 190px;
+  height: $background-height-mobile;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include media.onLg() {
+    width: 400px;
+    height: $background-height;
+  }
+
+  &__image {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -12px;
+  }
+}
+
+.cta {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

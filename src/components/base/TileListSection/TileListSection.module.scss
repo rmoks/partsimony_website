@@ -1,0 +1,56 @@
+@use '~styles/mixins';
+@use '~styles/colors';
+@use '~styles/media';
+
+.wrapper {
+  background-color: colors.$white;
+
+  .titleRow {
+    background-color: colors.$blue-400;
+    padding: 178px 0 165px;
+    @include media.onLg() {
+      padding: 120px 0 225px;
+    }
+
+    .content {
+      position: relative;
+
+      .image {
+        position: absolute;
+        right: -40px;
+        top: -140px;
+        height: 144px;
+        @include media.onLg() {
+          left: -135px;
+          top: -80px;
+          height: 320px;
+        }
+      }
+
+      .title {
+        color: colors.$white;
+        font-size: 32px;
+        font-weight: 700;
+
+        @include media.onLg() {
+          font-size: 54px;
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+
+  .tilesRow {
+    position: relative;
+    z-index: 1;
+    margin-top: -125px;
+    @include media.onLg() {
+      margin-top: -200px;
+    }
+    .tilesContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

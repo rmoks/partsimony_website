@@ -1,0 +1,157 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.container {
+  background-color: colors.$blue-400;
+
+  @include media.onLg() {
+    background-color: transparent;
+  }
+
+  .content {
+    position: relative;
+    padding: 0;
+    z-index: 0;
+
+    .imageWrapper {
+      z-index: -1;
+      display: none;
+    }
+
+    @include media.onLg() {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 890px;
+
+      .imageWrapper {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+      }
+    }
+  }
+
+  .title {
+    padding: 60px 24px 40px;
+    font-size: 32px;
+    line-height: 36px;
+    color: colors.$white-1000;
+
+    @include media.onLg() {
+      padding-top: 120px;
+      padding-left: 80px;
+      font-size: 54px;
+      line-height: 120%;
+      max-width: 800px;
+    }
+  }
+
+  .companies {
+    display: grid;
+    grid-template-areas:
+      'a b'
+      'c d';
+    grid-template-columns: 50% 1fr;
+
+    @include media.onLg() {
+      grid-template-columns: 340px 340px 340px;
+
+      .tile:not(:first-child) {
+        grid-row-start: 2;
+      }
+
+      .tile:last-child {
+        grid-column-start: 2;
+      }
+    }
+  }
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 165px;
+  padding: 25px 36px 22px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  z-index: 0;
+
+  .logo {
+    position: relative;
+    max-height: 41px;
+    width: 100%;
+    height: 100%;
+    max-width: 184px;
+  }
+
+  .tileTitle {
+    font-size: 42px;
+    font-weight: 700;
+    @include media.onLg() {
+      font-size: 52px;
+    }
+  }
+  .tileSubtitle {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+    @include media.onLg() {
+      font-size: 18px;
+    }
+  }
+  .tileDescription {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: colors.$grey-500;
+    height: 1em;
+    @include media.onLg() {
+      font-size: 14px;
+    }
+  }
+
+  @include media.onLg() {
+    height: 300px;
+    width: 340px;
+  }
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  color: colors.$white-1000;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  background-color: colors.$blue-400;
+
+  .footerTitle {
+    margin-bottom: 20px;
+  }
+
+  @include media.onLg() {
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .footerTitle {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}

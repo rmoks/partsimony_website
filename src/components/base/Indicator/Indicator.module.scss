@@ -1,0 +1,41 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+@use "sass:math";
+
+$size: 16px;
+$border-size: 1px;
+
+.indicator {
+  width: $size - 2 * $border-size;
+  height: $size - 2 * $border-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0.5;
+  border: $border-size solid transparent;
+
+  @include mixins.transition(opacity, border-color);
+
+  &--active {
+    border-color: colors.$white-1000;
+    opacity: 1;
+  }
+
+  &--interactive {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: '';
+    border-radius: inherit;
+    background-color: colors.$white-1000;
+    width: math.div($size, 2);
+    height: math.div($size, 2);
+  }
+}

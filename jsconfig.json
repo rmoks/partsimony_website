@@ -1,0 +1,40 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~api": [
+        "./api/"
+      ],
+      "~hooks/*": [
+        "./hooks/*"
+      ],
+      "~components/*": [
+        "./components/*"
+      ],
+      "~baseComponents/*": [
+        "./components/base/*"
+      ],
+      "~layouts/*": [
+        "./components/layouts/*"
+      ],
+      "~sections/*": [
+        "./components/sections/*"
+      ],
+      "~screens/*": [
+        "./screens/*"
+      ],
+      "~styles/*": [
+        "./styles/*"
+      ],
+      "~grid": [
+        "./components/grid"
+      ],
+      "~assets/*": [
+        "./assets/*"
+      ]
+    }
+  },
+}

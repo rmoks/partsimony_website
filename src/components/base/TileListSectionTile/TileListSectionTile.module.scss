@@ -1,0 +1,53 @@
+@use '~styles/mixins';
+@use '~styles/colors';
+@use '~styles/media';
+
+.wrapper {
+  box-sizing: border-box;
+  padding: 20px;
+  color: colors.$white;
+  flex-basis: 100%;
+
+  @include media.onLg() {
+    padding: 30px;
+    flex-basis: 33.33%;
+  }
+
+  &:nth-child(3n + 1) {
+    background-color: colors.$grey-900;
+  }
+
+  &:nth-child(3n + 2) {
+    background-color: colors.$blue-200;
+  }
+
+  &:nth-child(3n + 3) {
+    background-color: colors.$blue-100;
+  }
+
+  .icon {
+    height: 48px;
+    margin: 0;
+  }
+
+  .title {
+    @include mixins.TileTitle;
+    margin: 10px 0;
+
+    @include media.onLg() {
+      margin: 20px 0;
+    }
+
+    @include media.onLg() {
+      margin-right: 40px;
+    }
+
+    @include media.onXl() {
+      margin-right: 80px;
+    }
+  }
+
+  .description {
+    @include mixins.TileBody;
+  }
+}
